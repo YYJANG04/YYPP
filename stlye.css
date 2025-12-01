@@ -1,0 +1,337 @@
+/*===============FONT===============*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/*===============RESET===============*/
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box ;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+
+#wrap {
+    width:100%;
+}
+
+/*===============HEADER===============*/
+
+header {
+    font-family: 'pretendard';
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    height:80px;
+    padding:0 16px;
+    background:#b2d6ff;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+    color: white;
+    filter: invert();
+}
+
+.menu {
+    display: flex;
+    gap: 20px; 
+}
+
+.menu li {
+    font-size: 16px;
+}
+
+.menu li a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #2289ff;
+}
+
+/*===============FOOTER===============*/
+.footer{
+    font-family: 'pretendard';
+    font-weight: 200;
+    background: #333;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    gap: 15px;
+}
+
+.footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.footer-links li {
+    font-size: 14px;
+}
+
+
+.footer-links a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2289ff; 
+}
+
+/*======메인 컨테이너 화면전환=======*/
+
+.img-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+}
+
+.img-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fadeInOut 16s ease-in-out infinite;
+    filter: blur(3px);
+}
+.img-container img:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .img-container img:nth-child(2) {
+    animation-delay: 4s;
+  }
+  .img-container img:nth-child(3) {
+    animation-delay: 8s;
+  }
+  .img-container img:nth-child(4) {
+    animation-delay: 12s;
+  }
+
+@keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0;
+    }
+    25%, 75% {
+      opacity: 1;
+    }
+  }
+
+/*===메인화면 텍스트 및 그라맵===*/
+.text-overlay {
+    font-family: 'pretendard';
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10; 
+}
+
+.text-overlay h1 {
+    font-size: 50pt;
+    margin: 0;
+}
+
+.text-overlay p {
+    font-size: 13pt;
+    margin-top: 10px;
+}
+
+.bottom-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    z-index: 5; 
+}
+
+/*===멤버 소개란===*/
+.container {
+    font-family: 'pretendard';
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+.section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.left {
+    flex-direction: row;
+}
+.right {
+    flex-direction: row-reverse;
+}
+.image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.text {
+    flex: 1;
+}
+.text h2 {
+    font-size: 25px;
+    color: #333;
+}
+.text h3 {
+    font-size: 18px;
+    color: #474747;
+}
+.text p {
+    font-size: 16.5px;
+    color: #555;
+    line-height: 1.5;
+}
+.left .text {
+    text-align: left;
+}
+.right .text {
+    text-align: right;
+}
+
+/*=====음악란=====*/
+.album-section {
+    font-family: 'pretendard';
+    font-weight: 300;
+    padding: 20px;
+}
+  
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+  
+.album {
+    width: calc((100% - 60px) / 5);
+    background-color: lightgray;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1; /* 정사각형 비율 유지가 안 돼서 해당 부분 챗gpt에게 참고 받았습니다...*/
+}
+  
+.album img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+  
+.track-list {
+    margin-top: 20px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+  
+ 
+.record-section {
+    font-family: 'pretendard';
+    font-weight: 300;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+  
+.record {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    background-image: url(img/album13.jpg);
+    background-size: 100%;
+    background-color: #555;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    animation: spin 10s linear infinite;
+}
+
+/*앨범 섹션 텍스트 설정*/
+.album-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+.record-section h2 {
+    margin-bottom: 20px;
+}
+
+/*추천곡 섹션 텍스트 설정*/
+.record-section h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.record-section p {
+    color: #555;
+}
+
+.color p {
+    color: #2289ff;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom:20px ;
+}
+
+hr {
+    margin-top: 50px;
+}
+
+/*애니메이션*/
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
